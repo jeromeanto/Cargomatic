@@ -23,7 +23,7 @@
     --h2-font: 32px;
     --h3-font: 25px;
     --h4-font: 20px;
-    --p-font: 18px;
+    --p-font: 15px;
 }
 
 /* ===== Presets ===== */
@@ -35,6 +35,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--sry-white);
+    overflow-x: hidden;
 }
 
 h1,
@@ -64,12 +65,21 @@ p {
     font-weight: 400;
     line-height: 1.5;
 }
+body {
+    overflow-x: hidden;
+}
 
 /*media query for large screen*/
 @media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
+.container {
+    width: 1170px;
+}
+#click {
+    display: none;
+}
+.menu-btn {
+    display: none;
+}
 }
 
 .container {
@@ -138,7 +148,6 @@ nav ul li a:hover {
 
 /*banner section*/
 .banner {
-    padding-top: 60px;
     background-attachment: fixed;
     background-position: top;
     z-index: 0;
@@ -146,6 +155,8 @@ nav ul li a:hover {
 .banner .container-fluid {
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    padding-top: 60px;
 }
 .banner .banner-content {
     width: 41%;
@@ -203,6 +214,10 @@ span {
     text-align: center;
     border-radius: 10px;
 }
+.about-sec-img img{
+    width: 100%;
+    height: auto;
+}
 .development {
     width: 32%;
     background-color: var(--sry-white);
@@ -223,11 +238,10 @@ span {
     border-radius: 10px;
 }
 .about-sec-img {
-    width: 50%;
-    height: 100px;
+    width: 86px;
+    height: auto;
     margin-bottom: 20px;
     margin-top: 20px;
-    background-color: brown;
 }
 .about-grid p {
     width: 95%;
@@ -310,10 +324,13 @@ span {
 }
 
 .grid-img {
-    width: 60%;
-    height: 80px;
-    background-color: rgb(255, 136, 0);
-    margin: 30px 0px;
+    width: 86px;
+    height: auto;
+    margin: 30px 0px 10px 0px;
+}
+.grid-img img {
+    width: 100%;
+    height: auto;
 }
 .grid1 p {
     padding: 10px 0px 25px 0px;
@@ -327,6 +344,8 @@ span {
 .grid4 p {
     padding: 10px 0px 25px 0px;
 }
+
+/*
 .grid1:hover {
     background-color: #B3FFF5;
     transition: 0.2s;
@@ -343,6 +362,7 @@ span {
     background-color: #B3FFF5;
     transition: 0.2s;
 }
+*/
 
 /*latest news section*/
 .news {
@@ -366,60 +386,60 @@ span {
 .news1, .news2, .news3 {
     width: 32%;
     border-radius: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     box-shadow: 1px 1px 2px 1px rgba(175, 175, 175, 0.5);
     background-color: white;
 }
 .new-img {
     width: 100%;
-    height: 250px;
+    height: auto;
     border-radius: 10px 10px 0px 0px;
     padding-bottom: 20px;;
 }
 .new-img img{
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 10px 10px 0px 0px;
 }
 .news1 h3{
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 .news2 h3 {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 .news3 h3 {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 .news1 p {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 .news2 p {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 .news3 p {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 .news1 a {
     text-decoration: none;
-    padding-left: 10px;
+    padding-left: 20px;
     color: var(--pry-green);
     font-weight: bold;
 }
 .news2 a {
     text-decoration: none;
-    padding-left: 10px;
+    padding-left: 20px;
     color: var(--pry-green);
     font-weight: bold;
 }
 .news3 a {
     text-decoration: none;
-    padding-left: 10px;
+    padding-left: 20px;
     color: var(--pry-green);
     font-weight: bold;
 }
@@ -504,19 +524,20 @@ textarea {
 @media screen and (max-width: 767px) {
 .logo {
     width: 50%;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 nav {
     height: auto;
     position: absolute;
-    width: 100%;
+    width: 0;
+    right: 0;
     background-color: var(--pry-green);
-    right: -1500px;
     transition: all 0.3s;
     z-index: -5;
     top: 60px;
     text-align: center;
+    overflow: hidden;
 }
 .home{
     color: var(--sry-white);
@@ -526,7 +547,7 @@ nav ul li a:hover {
 }
 #click:checked~nav {
     top: 60px;
-    right: 0px;
+    width: 100%;
 }
 
 #click:checked~.menu-btn i:before {
@@ -535,12 +556,13 @@ nav ul li a:hover {
 
 .header {
     position: relative;
+    position: fixed;
 }
 
 nav ul {
     flex-direction: column;
     justify-content: flex-start;
-    height: 50vh;
+    height: auto;
     z-index: -5;
 }
 
@@ -553,10 +575,12 @@ nav ul li {
     z-index: -5;
 }
 
+
 .menu-btn i {
     display: block !important;
     display: flex !important;
-    font-size: 30px;
+    font-size: 25px;
+    cursor: pointer;
 }
 .menu-btn {
     height: 100%;
@@ -570,5 +594,164 @@ nav ul li {
     display: none;
 }
 
+/*banner section*/
+
+.banner .banner-content {
+    width: 90%;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+/*about section*/
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.web-design {
+    width: 80%;
+}
+.development {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.branding {
+    width: 80%;
+    margin-top: 20px;
+}
+
+/*our process ssection*/
+.our-process {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 0;
+}
+.process-head {
+    text-align: center;
+}
+.right {
+    width: 90%;
+}
+.left {
+    width: 90%;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.square {
+    right: 0;
+}
+
+/*latest news section*/
+.under-news-head {
+    flex-direction: column;
+    align-items: center;
+}
+.news1, .news2, .news3 {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+/*form section*/
+.form textarea {
+    width: 70%;
+}
+.input {
+    justify-content: center;
+}
+.input input {
+    width: 70%;
+}
+
+}
+
+/*media query for medium devices*/
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+#click {
+    display: none;
+}
+.menu-btn {
+    display: none;
+}
+.logo {
+    margin-left: 20px;
+}
+nav {
+    margin-right: 20px;
+}
+
+/*banner section*/
+.banner .banner-content {
+    margin-left: 20px;
+    width: 60%;
+}
+
+/*about section*/
+.web-design {
+    width: 29%;
+    margin-left: 20px;
+}
+.development {
+    width: 29%;
+}
+.branding {
+    width: 29%;
+    margin-right: 20px;
+}
+.about-grid {
+    padding-bottom: 0;
+}
+
+/*our process*/
+.our-process {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 0;
+}
+
+.process-head {
+    text-align: center;
+}
+
+.right {
+    width: 90%;
+}
+
+.left {
+    width: 90%;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.desk-img img {
+    padding-top: 35px;
+}
+.square {
+    right: 0;
+}
+
+/*latest news section*/
+.under-news-head {
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+/*form section*/
+.form textarea {
+    width: 70%;
+}
+
+.input {
+    justify-content: center;
+}
+
+.input input {
+    width: 70%;
+}
 }
 
