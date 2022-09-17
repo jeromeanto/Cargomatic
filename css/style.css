@@ -755,3 +755,74 @@ nav {
 }
 }
 
+@media screen and (max-width: 380px) {
+p {
+    font-size: 12px;
+}
+a {
+    font-size: 12px;
+}
+h2 {
+    font-size: 25px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 15px;
+}
+.banner-content a{
+    padding: 10px 20px;
+}
+.logo {
+    width: 70%;
+    margin-left: 10px;
+}
+.banner-content h2{
+    padding: 0px !important;
+}
+.banner-content {
+    padding: 10px 0px 30px 10px !important;
+}
+.banner-content p {
+    padding: 20px 0px;
+}
+.about-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 90%;
+}
+.our-process {
+    margin-top: 0px;
+}
+.process-head {
+    padding: 10px 10px;
+}
+.process-grids {
+    padding-left: 10px;
+}
+.grid-top {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.grid1, .grid2, .grid3, .grid4 {
+    width: 90%;
+    margin-top: 20px;
+}
+.grid-bottom {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.desk-img img {
+    padding-top:  10px;
+}
+.form-fields a{
+    padding: 10px 20px;
+}
+.footer {
+    text-align: center;
+}
+}
+
